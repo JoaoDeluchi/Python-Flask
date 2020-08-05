@@ -1,0 +1,17 @@
+version: '3'
+services:
+  database:
+    image: postgres:11.6
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: firstorder
+      POSTGRES_PASSWORD: firstorder
+      POSTGRES_DB: firstorder
+      TZ: America/Sao_Paulo
+    volumes:
+      - firstorderdb:/var/lib/postgresql/data
+    restart: always
+volumes:
+  firstorderdb:
+
